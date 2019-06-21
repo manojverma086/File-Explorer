@@ -1,1 +1,10 @@
 
+To run the project in your local machine please follow below steps-
+1. Clone the project in your local directory
+2. Install Laravel.
+3. Install Node.js(version>=10) and NPM
+4. Run ```npm install```
+5. Run ```npm run dev```
+6. Run ```php artisan serve```
+7. Your server will be started and you can open the app in browser.
+8. Enter http://localhost/8000/ in your browser
