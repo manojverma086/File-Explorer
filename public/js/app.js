@@ -65551,7 +65551,7 @@ function (_Component) {
         result.forEach(function (item) {
           console.log(item);
           items.push({
-            name: item,
+            name: item.substring(0, 20),
             author: "Manoj V",
             url: "/uploads/" + item
           });
