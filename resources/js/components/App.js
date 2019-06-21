@@ -10,9 +10,6 @@ export default class App extends Component {
         super(props);
         this.state = {
                 items: [
-                    {name: "Document1#", author: "Manoj v"},
-                    {name: "Document2#", author: "Manoj v"},
-                    {name: "Document3#", author: "Manoj v"}
                 ],
                 active: 0
         }
@@ -20,7 +17,21 @@ export default class App extends Component {
     componentDidMount() {
         fetch(`/file`)
             .then(res => res.json())
-            .then(result => console.log(result));
+            .then(result => {
+                result = JSON.parse(result);
+                let items = [];
+                result.forEach(item => {
+                    console.log(item);
+                    items.push({
+                        name: item,
+                        author: "Manoj V",
+                        url: "/" + item
+                    });
+                });
+                this.setState({
+                    items: items
+                })
+            });
     }
     selectItem = (index) => {
         this.setState({

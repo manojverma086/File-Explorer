@@ -12,7 +12,7 @@ export default class Sidebar extends Component {
     change = (e) => {   
         this.setState({file:e.target.files[0]})
     }
-    submit = () => {
+    submit = (e) => {
         e.preventDefault() // Stop form submit
         this.fileUpload(this.state.file).then((response)=>{
           console.log(response.data);
@@ -28,7 +28,7 @@ export default class Sidebar extends Component {
                 'content-type': 'multipart/form-data'
             }
         }
-        return  post(url, formData,config)
+        return post(url, formData,config)
     }
     render() {
         return (

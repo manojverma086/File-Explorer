@@ -38,13 +38,19 @@ class UploadFileController extends Controller
         //Move Uploaded File
         $destinationPath = 'uploads';
         $file->move($destinationPath,$file->getClientOriginalName());
-        return redirect('/');
+        $res = ["success"];
+        return response()->json(null);
      }
      public function getFiles(Request $request) {
         $result = [];
-        foreach (\Illuminate\Support\Facades\Storage::files('uploads') as $filename) {
-            $file = \Illuminate\Support\Facades\Storage::get($filename);
-            array_push($result, $file);
+        if ($handle = opendir(public_path('uploads'))) {
+
+            while (false !== ($entry = readdir($handle))) {
+                if ($entry != "." && $entry != "..") {
+                    array_push($result, $entry);
+                }
+            }
+            closedir($handle);
         }
         $temp = json_encode($result);
         return response()->json($temp);

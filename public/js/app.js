@@ -65532,16 +65532,7 @@ function (_Component) {
     };
 
     _this.state = {
-      items: [{
-        name: "Document1#",
-        author: "Manoj v"
-      }, {
-        name: "Document2#",
-        author: "Manoj v"
-      }, {
-        name: "Document3#",
-        author: "Manoj v"
-      }],
+      items: [],
       active: 0
     };
     return _this;
@@ -65550,10 +65541,25 @@ function (_Component) {
   _createClass(App, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      var _this2 = this;
+
       fetch("/file").then(function (res) {
         return res.json();
       }).then(function (result) {
-        return console.log(result);
+        result = JSON.parse(result);
+        var items = [];
+        result.forEach(function (item) {
+          console.log(item);
+          items.push({
+            name: item,
+            author: "Manoj V",
+            url: "/" + item
+          });
+        });
+
+        _this2.setState({
+          items: items
+        });
       });
     }
   }, {
@@ -65828,9 +65834,9 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-page-box"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        name: this.props.item.name
+        name: (this.props.item || {}).name
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Content__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        item: this.props.item
+        item: this.props.item || {}
       }));
     }
   }]);
@@ -65899,7 +65905,7 @@ function (_Component) {
       });
     };
 
-    _this.submit = function () {
+    _this.submit = function (e) {
       e.preventDefault(); // Stop form submit
 
       _this.fileUpload(_this.state.file).then(function (response) {

@@ -9,9 +9,9 @@ export default class MainPage extends Component {
     render() {
         return (<div>
                 <div className="main-page-box">
-                    <Header name={this.props.item.name}/>
+                    <Header name={(this.props.item||{}).name}/>
                 </div>
-                <Content item={this.props.item}/>
+                <Content item={this.props.item || {}}/>
                 </div>
         );
     }
