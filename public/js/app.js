@@ -65553,7 +65553,7 @@ function (_Component) {
           items.push({
             name: item,
             author: "Manoj V",
-            url: "/" + item
+            url: "/uploads/" + item
           });
         });
 

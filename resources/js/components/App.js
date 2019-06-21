@@ -25,7 +25,7 @@ export default class App extends Component {
                     items.push({
                         name: item,
                         author: "Manoj V",
-                        url: "/" + item
+                        url: "/uploads/" + item
                     });
                 });
                 this.setState({
