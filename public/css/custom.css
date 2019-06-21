@@ -1,0 +1,241 @@
+.frame{
+    position: relative;
+    width: 871px;
+    height: 1006px;
+    background: #FFFFFF;
+}
+.main-page-box {
+    position: absolute;
+left: 29.85%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #FFFFFF;
+border: 1px solid #E8EAEF;
+}
+.document-box {
+    position: absolute;
+left: 31.11%;
+right: 1.03%;
+top: 5.96%;
+bottom: 15.31%;
+}
+.mask {
+    position: absolute;
+    left: 31.11%;
+    right: 1.03%;
+    top: 5.96%;
+    bottom: 15.31%;
+}
+.mask-black{
+    position: absolute;
+left: 31.11%;
+right: 1.03%;
+top: 5.96%;
+bottom: 15.31%;
+
+background: #000000;
+}
+.content {
+    position: absolute;
+    width: 547px;
+    height: 718px;
+    left: 288px;
+    top: 75px;
+}
+.header {
+    position: absolute;
+    left: 29.85%;
+    right: 0%;
+    top: 0%;
+    bottom: 95.03%;
+    background: #4077E4;
+}
+.header>.name {
+    position: absolute;
+    height: 26px;
+    left: 32.15%;
+    right: 54.54%;
+    top: calc(50% - 26px/2 - 476px);
+
+    font-family: Neue Alte Grotesk;
+    font-size: 18px;
+    line-height: 26px;
+    /* identical to box height, or 144% */
+
+    z-index: 1;
+    color: #FFFFFF;
+}
+.sidebar {
+    position: absolute;
+    left: 0%;
+    right: 70.15%;
+    top: 0%;
+    bottom: 0%;
+
+    background: #F3F3F3;
+}
+.rect-3 {
+    position: absolute;
+left: 0%;
+right: 70.15%;
+top: 0%;
+bottom: 95.03%;
+
+background: #F3F3F3;
+}
+.label {
+    position: absolute;
+height: 15px;
+left: 1.72%;
+right: 93.46%;
+top: calc(50% - 15px/2 - 477.5px);
+
+font-family: Neue Alte Grotesk;
+font-size: 12px;
+line-height: 15px;
+z-index: 1;
+/* identical to box height */
+
+letter-spacing: 2px;
+text-transform: uppercase;
+
+color: #394166;
+}
+.upload {
+    position: absolute;
+    left: 20.32%;
+    right: 71.99%;
+    top: 0.7%;
+    bottom: 95.73%;
+}
+.upload>.text {
+    position: absolute;
+height: 13px;
+left: 0px;
+right: 23px;
+top: 11px;
+
+font-family: Neue Alte Grotesk;
+font-size: 13px;
+line-height: 13px;
+z-index: 1;
+/* identical to box height, or 100% */
+
+
+color: #9CA0B2;
+}
+.upload>.icon {
+    position: absolute;
+    width: 12px;
+    height: 14px;
+    right: 1px;
+    top: 13px;
+    z-index: 1;
+}
+.upload.rect {
+    position: absolute;
+left: 0%;
+right: 0%;
+top: -2.78%;
+bottom: 0%;
+
+background: #E8EAEF;
+border-radius: 2px;
+}
+.divider {
+    position: absolute;
+    left: 0%;
+    right: 70.15%;
+    top: 4.87%;
+    bottom: 95.03%;
+    background: #D7D9E0;
+}
+.tabs{
+    position: absolute;
+    left: 0.57%;
+    right: 71.3%;
+    top: 5.96%;
+    /* bottom: 86.48%; */
+}
+.tab {
+    position: relative;
+    width: 245px;
+    height: 75px;
+}
+.tab>.ui-mini-badge {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    left: 7px;
+    top: 6px;
+    z-index: 1;
+}
+.tab>.document-name {
+    position: absolute;
+    height: 18px;
+    left: 15px;
+    right: 68px;
+    top: 15px;
+    font-family: Neue Alte Grotesk;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    color: #394166;
+    z-index: 1;
+}
+.tab>.addendnm-btn {
+    position: absolute;
+height: 19px;
+left: 77.69%;
+right: 16.92%;
+top: 15px;
+}
+.tab>.name {
+    position: absolute;
+left: 15px;
+right: 67px;
+top: 61.84%;
+bottom: 18.42%;
+
+font-family: Neue Alte Grotesk;
+font-size: 12px;
+line-height: 14px;
+z-index: 1;
+/* identical to box height */
+
+
+color: #394166;
+}
+.tab>.tab-active {
+    position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+}
+.tab>.tab-active>.rect{
+    position: absolute;
+width: 5px;
+left: 0px;
+top: 0px;
+bottom: 0px;
+
+background: #4077E4;
+border-radius: 2px 0px 0px 2px;
+}
+.tab>.tab-active>.rect-inactive {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+
+    background: #FFFFFF;
+    border: 1px solid #E8EAEF;
+    box-sizing: border-box;
+    box-shadow: 0px 3px 6px rgba(57, 65, 102, 0.05);
+    border-radius: 2px;
+}
+
