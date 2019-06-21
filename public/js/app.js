@@ -65524,6 +65524,13 @@ function (_Component) {
     _classCallCheck(this, App);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(App).call(this, props));
+
+    _this.selectItem = function (index) {
+      _this.setState({
+        active: index
+      });
+    };
+
     _this.state = {
       items: [{
         name: "Document1#",
@@ -65534,7 +65541,8 @@ function (_Component) {
       }, {
         name: "Document3#",
         author: "Manoj v"
-      }]
+      }],
+      active: 0
     };
     return _this;
   }
@@ -65554,9 +65562,11 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "frame"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        selectItem: this.selectItem,
+        active: this.state.active,
         items: this.state.items
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_MainPage__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        item: this.state.items[0]
+        item: this.state.items[this.state.active]
       })));
     }
   }]);
@@ -65942,6 +65952,8 @@ function (_Component) {
       }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "divider"
       }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Tabs__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        selectItem: this.props.selectItem,
+        active: this.props.active,
         items: this.props.items
       }));
     }
@@ -65999,9 +66011,7 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Tab).call(this, props));
 
     _this.click = function () {
-      console.log(_this.props.index);
-
-      _this.props.parentMethod(_this.props.index);
+      _this.props.selectItem(_this.props.index);
     };
 
     return _this;
@@ -66079,38 +66089,22 @@ function (_Component) {
   _inherits(Tabs, _Component);
 
   function Tabs(props) {
-    var _this;
-
     _classCallCheck(this, Tabs);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Tabs).call(this, props));
-
-    _this.click = function (index) {
-      console.log(index);
-
-      _this.setState({
-        active: index
-      });
-    };
-
-    _this.state = {
-      active: 0
-    };
-    return _this;
+    return _possibleConstructorReturn(this, _getPrototypeOf(Tabs).call(this, props));
   }
 
   _createClass(Tabs, [{
     key: "render",
     value: function render() {
       var tabs = [];
-      console.log("it will render again");
 
       for (var i = 0; i < this.props.items.length; i++) {
         tabs.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Tab__WEBPACK_IMPORTED_MODULE_1__["default"], {
           key: i,
-          parentMethod: this.click.bind(i),
+          selectItem: this.props.selectItem,
           index: i,
-          active: this.state.active,
+          active: this.props.active,
           item: this.props.items[i]
         }));
       }

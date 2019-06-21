@@ -13,7 +13,8 @@ export default class App extends Component {
                     {name: "Document1#", author: "Manoj v"},
                     {name: "Document2#", author: "Manoj v"},
                     {name: "Document3#", author: "Manoj v"}
-                ]
+                ],
+                active: 0
         }
     }
     componentDidMount() {
@@ -21,12 +22,17 @@ export default class App extends Component {
             .then(res => res.json())
             .then(result => console.log(result));
     }
+    selectItem = (index) => {
+        this.setState({
+            active: index
+        })
+    }
     render() {
         return (
             <BrowserRouter>
                 <div className="frame">
-                    <Sidebar items={this.state.items}/>
-                    <MainPage item={this.state.items[0]}/>
+                    <Sidebar selectItem={this.selectItem} active={this.state.active} items={this.state.items}/>
+                    <MainPage item={this.state.items[this.state.active]}/>
                 </div>
             </BrowserRouter>
         );

@@ -52,7 +52,7 @@ export default class Sidebar extends Component {
                     
                 <div className="rect-3"></div>
                     <div className="divider"></div>
-                <Tabs items={this.props.items}/>
+                <Tabs selectItem={this.props.selectItem} active={this.props.active} items={this.props.items}/>
             </div>
         );
     }

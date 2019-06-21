@@ -5,8 +5,7 @@ export default class Tab extends Component {
         super(props);
     }
     click = () => {
-        console.log(this.props.index);
-        this.props.parentMethod(this.props.index);
+        this.props.selectItem(this.props.index);
     }
     render() {
         return (
@@ -20,7 +19,6 @@ export default class Tab extends Component {
                         <div className="rect"></div>
                         <div className="rect-inactive"></div>}
                     </div>}
-                    
                 </div>
         );
     }
