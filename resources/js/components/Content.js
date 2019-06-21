@@ -12,7 +12,7 @@ export default class Content extends Component {
                     </div>
                 </div>
                 <div className="content">
-                 dldsdlg dskgksdgk ghsd ghsdk 
+                    <img src={this.props.item.url} className="content-img"/>
                 </div>
             </div>
         )

@@ -9,7 +9,7 @@ export default class Tab extends Component {
                 <div className="tab"> 
                     <div className="ui-mini-badge">
                     </div>
-                    <div className="document-name">{this.props.item.name}</div>
+                    <a href="#" className="document-name">{this.props.item.name}</a>
                     <div className="addendnm-btn"></div>
                     <div className="name">{this.props.item.author}</div>
                     {this.props.active === this.props.index && <div className="tab-active">

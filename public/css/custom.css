@@ -50,6 +50,10 @@ background: #000000;
     left: 288px;
     top: 75px;
 }
+.content-img {
+    width: 547px;
+    height: 718px;
+}
 .header {
     position: absolute;
     left: 0%;
@@ -114,22 +118,33 @@ color: #394166;
     top: 0.7%;
     bottom: 95.73%;
 }
-.upload>.text {
-    position: absolute;
-height: 13px;
-left: 0px;
-right: 23px;
-top: 11px;
 
-font-family: Neue Alte Grotesk;
-font-size: 13px;
-line-height: 13px;
-z-index: 1;
-/* identical to box height, or 100% */
-
-
-color: #9CA0B2;
-}
+  .custom-file-input {
+      text-decoration: none;
+     position: absolute;
+  height: 13px;
+  left: 0px;
+  right: 23px;
+  top: 11px;
+  width: 44px;
+  font-family: Neue Alte Grotesk;
+  font-size: 13px;
+  line-height: 16px;
+  z-index: 1;
+  /* identical to box height, or 100% */
+  color: #9CA0B2;
+  opacity: 1 !important;
+  }
+  .custom-file-input::before {
+    content: 'Upload';
+    -webkit-user-select: none;
+    cursor: pointer;
+  }
+ 
+  .custom-file-input:active {
+    outline: 0;
+  }
+  
 .upload>.icon {
     position: absolute;
     width: 12px;
@@ -196,6 +211,7 @@ border-radius: 2px;
     z-index: 1;
 }
 .tab>.document-name {
+    text-decoration: none;
     position: absolute;
     height: 18px;
     left: 15px;

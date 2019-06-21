@@ -16,6 +16,11 @@ export default class App extends Component {
                 ]
         }
     }
+    componentDidMount() {
+        fetch(`/file`)
+            .then(res => res.json())
+            .then(result => console.log(result));
+    }
     render() {
         return (
             <BrowserRouter>

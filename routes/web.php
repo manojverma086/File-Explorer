@@ -14,5 +14,5 @@
 Route::get('/', function () {
     return view('app');
 });
-Route::get('/uploadfile','UploadFileController@index');
-Route::post('/uploadfile','UploadFileController@showUploadFile');
+Route::post('/file','UploadFileController@uploadFile');
+Route::get('/file', 'UploadFileController@getFiles');

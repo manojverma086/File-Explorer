@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Contracts\Routing\ResponseFactory;
 
 class UploadFileController extends Controller
 {
     public function index() {
         return view('upload');
      }
-     public function showUploadFile(Request $request) {
+     public function uploadFile(Request $request) {
         $file = $request->file('image');
      
         //Display File Name
@@ -35,5 +37,15 @@ class UploadFileController extends Controller
         //Move Uploaded File
         $destinationPath = 'uploads';
         $file->move($destinationPath,$file->getClientOriginalName());
+        return redirect('/');
+     }
+     public function getFiles(Request $request) {
+        $result = [];
+        foreach (\Illuminate\Support\Facades\Storage::files('uploads') as $filename) {
+            $file = \Illuminate\Support\Facades\Storage::get($filename);
+            array_push($result, $file);
+        }
+        $temp = json_encode($result);
+        return response()->json($temp);
      }
 }
