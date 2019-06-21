@@ -9,15 +9,14 @@ export default class Sidebar extends Component {
             file: null
         }
     }
-    change = (e) => {
-        console.log(e.target.file);   
+    change = (e) => {   
         this.setState({file:e.target.files[0]})
     }
     submit = () => {
         e.preventDefault() // Stop form submit
         this.fileUpload(this.state.file).then((response)=>{
           console.log(response.data);
-        })
+        });
     }
 
     fileUpload(file){
@@ -39,16 +38,18 @@ export default class Sidebar extends Component {
                     <div className="label">
                     Files
                 </div>
-                <div className="upload">
+               
                     <form onSubmit={this.submit}>
+                    <div className="upload">
                         <input type="file" name="file" onChange={this.change} className="custom-file-input"></input>
                         <button type="submit" className="custom-btn icon">
                             <UploadIcon/>
                         </button>
-                    </form>
-                    <div className="rect">
+                        <div className="rect">
                         </div>    
                     </div>
+                    </form>
+                    
                 <div className="rect-3"></div>
                     <div className="divider"></div>
                 <Tabs items={this.props.items}/>

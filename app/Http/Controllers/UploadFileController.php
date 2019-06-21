@@ -13,7 +13,8 @@ class UploadFileController extends Controller
         return view('upload');
      }
      public function uploadFile(Request $request) {
-        $file = $request->file('image');
+         var_dump($request->file('file'));
+        $file = $request->file('file');
      
         //Display File Name
         echo 'File Name: '.$file->getClientOriginalName();

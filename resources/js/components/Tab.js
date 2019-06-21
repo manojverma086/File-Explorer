@@ -4,12 +4,16 @@ export default class Tab extends Component {
     constructor(props) {
         super(props);
     }
+    click = () => {
+        console.log(this.props.index);
+        this.props.parentMethod(this.props.index);
+    }
     render() {
         return (
                 <div className="tab"> 
                     <div className="ui-mini-badge">
                     </div>
-                    <a href="#" className="document-name">{this.props.item.name}</a>
+                    <a href="#" onClick={this.click} className="document-name">{this.props.item.name}</a>
                     <div className="addendnm-btn"></div>
                     <div className="name">{this.props.item.author}</div>
                     {this.props.active === this.props.index && <div className="tab-active">

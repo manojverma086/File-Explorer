@@ -144,6 +144,11 @@ color: #394166;
   .custom-file-input:active {
     outline: 0;
   }
+  .custom-btn{
+      padding: 0;
+      border: 0;
+      background: #F3F3F3;
+  }
   
 .upload>.icon {
     position: absolute;

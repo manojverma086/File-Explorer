@@ -65884,8 +65884,6 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Sidebar).call(this, props));
 
     _this.change = function (e) {
-      console.log(e.target.file);
-
       _this.setState({
         file: e.target.files[0]
       });
@@ -65925,10 +65923,10 @@ function (_Component) {
         className: "sidebar"
       }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "label"
-      }, "Files"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "upload"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
+      }, "Files"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
         onSubmit: this.submit
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "upload"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
         type: "file",
         name: "file",
@@ -65937,9 +65935,9 @@ function (_Component) {
       }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
         type: "submit",
         className: "custom-btn icon"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Icons__WEBPACK_IMPORTED_MODULE_3__["default"], null))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Icons__WEBPACK_IMPORTED_MODULE_3__["default"], null)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "rect"
-      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "rect-3"
       }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "divider"
@@ -65994,9 +65992,19 @@ function (_Component) {
   _inherits(Tab, _Component);
 
   function Tab(props) {
+    var _this;
+
     _classCallCheck(this, Tab);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Tab).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Tab).call(this, props));
+
+    _this.click = function () {
+      console.log(_this.props.index);
+
+      _this.props.parentMethod(_this.props.index);
+    };
+
+    return _this;
   }
 
   _createClass(Tab, [{
@@ -66008,6 +66016,7 @@ function (_Component) {
         className: "ui-mini-badge"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "#",
+        onClick: this.click,
         className: "document-name"
       }, this.props.item.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "addendnm-btn"
@@ -66077,6 +66086,8 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Tabs).call(this, props));
 
     _this.click = function (index) {
+      console.log(index);
+
       _this.setState({
         active: index
       });
@@ -66092,10 +66103,12 @@ function (_Component) {
     key: "render",
     value: function render() {
       var tabs = [];
+      console.log("it will render again");
 
       for (var i = 0; i < this.props.items.length; i++) {
         tabs.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Tab__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          onClick: this.click.bind(i),
+          key: i,
+          parentMethod: this.click.bind(i),
           index: i,
           active: this.state.active,
           item: this.props.items[i]
