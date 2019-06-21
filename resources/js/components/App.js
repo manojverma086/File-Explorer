@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import Sidebar from './Sidebar';
-import Header from './Header';
+import MainPage from './MainPage';
 
 export default class App extends Component {
     constructor(props) {
@@ -21,7 +21,7 @@ export default class App extends Component {
             <BrowserRouter>
                 <div className="frame">
                     <Sidebar items={this.state.items}/>
-                    <Document item={this.state.items[0]}/>
+                    <MainPage item={this.state.items[0]}/>
                 </div>
             </BrowserRouter>
         );

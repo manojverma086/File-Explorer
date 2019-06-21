@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import Header from './Header';
-import Document from './Document';
+import Content from './Content';
 
 export default class MainPage extends Component {
+    constructor(props) {
+        super(props);
+    }
     render() {
-        return (
+        return (<div>
                 <div className="main-page-box">
                     <Header name={this.props.item.name}/>
-                    <Document item={this.props.item}/>
+                </div>
+                <Content item={this.props.item}/>
                 </div>
         );
     }

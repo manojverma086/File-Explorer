@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Tabs from './Tabs';
+import UploadIcon from './Icons';
 export default class Sidebar extends Component {
     constructor(props) {
         super(props);
@@ -15,6 +16,7 @@ export default class Sidebar extends Component {
                 <div className="upload">
                     <div className="text">Upload</div>
                     <div className="icon">
+                        <UploadIcon/>
                         </div>
                         <div className="rect">
                             </div>    

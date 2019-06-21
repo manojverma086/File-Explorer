@@ -1,3 +1,9 @@
+#app {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .frame{
     position: relative;
     width: 871px;
@@ -46,19 +52,17 @@ background: #000000;
 }
 .header {
     position: absolute;
-    left: 29.85%;
+    left: 0%;
     right: 0%;
     top: 0%;
     bottom: 95.03%;
     background: #4077E4;
 }
-.header>.name {
+.header-name {
     position: absolute;
     height: 26px;
-    left: 32.15%;
-    right: 54.54%;
-    top: calc(50% - 26px/2 - 476px);
-
+    left: 2.30%;
+    top: calc(50% - 26px/2 - 1px);
     font-family: Neue Alte Grotesk;
     font-size: 18px;
     line-height: 26px;
@@ -131,8 +135,27 @@ color: #9CA0B2;
     width: 12px;
     height: 14px;
     right: 1px;
-    top: 13px;
+    top: 6px;
     z-index: 1;
+}
+.upload>.upload-icon {
+    /* Icon */
+
+position: absolute;
+height: 14px;
+left: 0%;
+right: 0%;
+top: 1px;
+
+font-family: SS Geomicons Squared;
+font-size: 12px;
+line-height: 14px;
+/* identical to box height, or 117% */
+text-align: center;
+
+color: #9CA0B2;
+
+
 }
 .upload.rect {
     position: absolute;
@@ -217,6 +240,7 @@ bottom: 0%;
 }
 .tab>.tab-active>.rect{
     position: absolute;
+    z-index: 1;
 width: 5px;
 left: 0px;
 top: 0px;
