@@ -3,16 +3,21 @@
 #+AUTHOR:    Manoj
 #+EMAIL:     verma.manoj241@gmail.com
 
-#+DESCRIPTION: This project is a website where you can upload file and see the file on dashboard
+#+DESCRIPTION: This project is a website where you can upload image file and see the file on dashboard
 #+KEYWORDS:   file-upload
 #+LANGUAGE:  en
-
+#+SUPPORTED FILE EXTENSION: .jpg, .png, .jpeg
 To run the project in your local machine please follow below steps-
 - Clone the project in your local directory
 - Install Laravel.
+- Install Composer
+- Run composer install
 - Install Node.js(version>=10) and NPM
 - Run ```npm install```
 - Run ```npm run dev```
 - Run ```php artisan serve```
 - Your server will be started and you can open the app in browser.
 - Enter http://localhost/8000/ in your browser
+
+- Upload some images, after clicking on upload and submit file, please click on upload Icon on right side of Upload button
+- Refresh the page
