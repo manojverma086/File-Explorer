@@ -1,10 +1,18 @@
 
+#+TITLE:    File Explorer
+#+AUTHOR:    Manoj
+#+EMAIL:     verma.manoj241@gmail.com
+
+#+DESCRIPTION: This project is a website where you can upload file and see the file on dashboard
+#+KEYWORDS:   file-upload
+#+LANGUAGE:  en
+
 To run the project in your local machine please follow below steps-
-1. Clone the project in your local directory
-2. Install Laravel.
-3. Install Node.js(version>=10) and NPM
-4. Run ```npm install```
-5. Run ```npm run dev```
-6. Run ```php artisan serve```
-7. Your server will be started and you can open the app in browser.
-8. Enter http://localhost/8000/ in your browser
+- Clone the project in your local directory
+- Install Laravel.
+- Install Node.js(version>=10) and NPM
+- Run ```npm install```
+- Run ```npm run dev```
+- Run ```php artisan serve```
+- Your server will be started and you can open the app in browser.
+- Enter http://localhost/8000/ in your browser
