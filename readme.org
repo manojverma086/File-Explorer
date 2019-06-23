@@ -1,23 +1,73 @@
+#+TITLE: File Drive
 
-#+TITLE:    File Explorer
-#+AUTHOR:    Manoj
-#+EMAIL:     verma.manoj241@gmail.com
+* Overview
+The code present in this folder, attempts to help you to upload files online and access online in future. You can read and download.
 
-#+DESCRIPTION: This project is a website where you can upload image file and see the file on dashboard
-#+KEYWORDS:   file-upload
-#+LANGUAGE:  en
-#+SUPPORTED FILE EXTENSION: .jpg, .png, .jpeg
-To run the project in your local machine please follow below steps-
-- Clone the project in your local directory
-- Install Laravel.
-- Install Composer
-- Run composer install
-- Install Node.js(version>=10) and NPM
-- Run ```npm install```
-- Run ```npm run dev```
-- Run ```php artisan serve```
-- Your server will be started and you can open the app in browser.
-- Enter http://localhost/8000/ in your browser
+Currently it supports the following:
 
-- Upload some images, after clicking on upload and submit file, please click on upload Icon on right side of Upload button
-- Refresh the page
+ - File type supported: .pdf, .jpeg, .png, .jpg 
+ - Upload a file one time.
+ - Ability to view files uploaded on dashboard.
+
+* Prerequisites
+
+This code is written in PHP Laravel and React.js. Here's my current Node and Laravel version info:
+
+#+BEGIN_SRC
+> node --version
+v10.16.0
+> npm --version
+6.9.0
+>php composer.phar -V
+1.8.6
+> php artisan -V
+5.8.24
+#+END_SRC
+
+All of the dependencies are present in =package.json=, and =composer.json= to install one can run the below commands under this folder:
+
+#+BEGIN_SRC shell
+composer install
+#+END_SRC
+
+#+BEGIN_SRC shell
+npm install
+#+END_SRC
+
+
+* Execution
+To execute the script here's the steps which can be used:
+
+    1) Clone the project in your local directory
+    2) Open terminal and cd to project's root folder where package.json resides.
+    3) Install composer dependencies.
+    4) Install npm dependencies.
+    5) Build react modules using command given in below table
+    6) Build and start laravel local server(see command in below table)
+    7) Enter http://localhost/8000/ in your browser
+    8) Upload some supported files as mentioned in above and refresh the page. 
+    9) View files by clicking on left sidebar tabs.
+
+* Commands to execute
+
+|-------------------+-----------------------------------|
+| Command           | Description                       |
+|-------------------+-----------------------------------|
+| npm run dev       | Compile and build react modules   |
+| php artisan serve | Build and run app on local server |
+|-------------------+-----------------------------------|
+
+To run, execute any of these commands in the project folder i.e. the folder containing =package.json= :
+
+#+BEGIN_SRC shell
+npm run dev
+#+END_SRC
+
+To run local server
+
+#+BEGIN_SRC shell
+php artisan serve
+#+END_SRC
+
+This repo currently maintained by Manoj Verma <verma.manoj241@gmail.com>. If there's any issues feel free to reach out.
+
