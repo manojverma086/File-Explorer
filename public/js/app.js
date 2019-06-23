@@ -65634,14 +65634,20 @@ function (_Component) {
   _createClass(Content, [{
     key: "render",
     value: function render() {
+      console.log(this.props);
+      var ext = this.props.item.url ? this.props.item.url.split('.').pop() : '';
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "document-box"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "mask"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "content"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("object", {
-        data: this.props.item.url
+      }, ext.toLowerCase() == 'pdf' && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("object", {
+        data: this.props.item.url,
+        className: "content-data"
+      }) || react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: this.props.item.url,
+        className: "content-data"
       })));
     }
   }]);

@@ -5,6 +5,7 @@ export default class Content extends Component {
         super(props);
     }
     render(){
+        let ext = this.props.item.url ? this.props.item.url.split('.').pop() : '';
         return (
             <div>
                 <div className="document-box">
@@ -12,8 +13,9 @@ export default class Content extends Component {
                     </div>
                 </div>
                 <div className="content">
-                    <object data={this.props.item.url} className="content-data"></object>
-                    {/* <img src={this.props.item.url} className="content-img"/> */}
+                    {ext.toLowerCase() == 'pdf' && 
+                    <object data={this.props.item.url} className="content-data"></object> ||
+                    <img src={this.props.item.url} className="content-data"/>}
 
                 </div>
             </div>
