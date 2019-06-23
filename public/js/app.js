@@ -65640,9 +65640,8 @@ function (_Component) {
         className: "mask"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "content"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: this.props.item.url,
-        className: "content-img"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("object", {
+        data: this.props.item.url
       })));
     }
   }]);

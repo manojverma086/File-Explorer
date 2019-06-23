@@ -12,7 +12,9 @@ export default class Content extends Component {
                     </div>
                 </div>
                 <div className="content">
-                    <img src={this.props.item.url} className="content-img"/>
+                    <object data={this.props.item.url} className="content-data"></object>
+                    {/* <img src={this.props.item.url} className="content-img"/> */}
+
                 </div>
             </div>
         )
