@@ -65634,7 +65634,6 @@ function (_Component) {
   _createClass(Content, [{
     key: "render",
     value: function render() {
-      console.log(this.props);
       var ext = this.props.item.url ? this.props.item.url.split('.').pop() : '';
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "document-box"
@@ -65774,7 +65773,7 @@ function (_Component) {
         xmlns: "http://www.w3.org/2000/svg"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
         d: "M10.2773 5.9668C10.4258 6.11523 10.5 6.29297 10.5 6.5C10.5 6.71875 10.4258 6.89844 10.2773 7.03906C10.1328 7.17969 9.95703 7.25 9.75 7.25H7.875V11C7.875 11.207 7.80078 11.3848 7.65234 11.5332C7.50781 11.6777 7.33203 11.75 7.125 11.75H4.875C4.66797 11.75 4.49023 11.6777 4.3418 11.5332C4.19727 11.3848 4.125 11.207 4.125 11V7.25H2.25C2.04297 7.25 1.86523 7.17969 1.7168 7.03906C1.57227 6.89844 1.5 6.71875 1.5 6.5C1.5 6.29688 1.57227 6.11914 1.7168 5.9668L5.4668 2.2168C5.61133 2.07227 5.78906 2 6 2C6.20703 2 6.38281 2.07227 6.52734 2.2168L10.2773 5.9668ZM10.5 12.5V9.5H12V12.5C12 12.9141 11.8535 13.2676 11.5605 13.5605C11.2676 13.8535 10.9141 14 10.5 14H1.5C1.08594 14 0.732422 13.8535 0.439453 13.5605C0.146484 13.2676 0 12.9141 0 12.5V9.5H1.5V12.5H10.5Z",
-        fill: "#9CA0B2"
+        fill: this.props.fill || '#9CA0B2'
       }));
     }
   }]);
@@ -65914,7 +65913,11 @@ function (_Component) {
       e.preventDefault(); // Stop form submit
 
       _this.fileUpload(_this.state.file).then(function (response) {
-        console.log(response.data);
+        alert("File uploaded successfully");
+
+        _this.setState({
+          file: null
+        });
       });
     };
 
@@ -65955,8 +65958,11 @@ function (_Component) {
         className: "custom-file-input"
       }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
         type: "submit",
-        className: "custom-btn icon"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Icons__WEBPACK_IMPORTED_MODULE_3__["default"], null)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "custom-btn icon",
+        title: "Cilck to upload"
+      }, this.state.file && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Icons__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        fill: '#394166'
+      }), !this.state.file && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Icons__WEBPACK_IMPORTED_MODULE_3__["default"], null)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "rect"
       }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "rect-3"

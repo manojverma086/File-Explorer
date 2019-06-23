@@ -15,11 +15,14 @@ export default class Sidebar extends Component {
     submit = (e) => {
         e.preventDefault() // Stop form submit
         this.fileUpload(this.state.file).then((response)=>{
-          console.log(response.data);
+          alert("File uploaded successfully");
+          this.setState({
+              file: null
+          })
         });
     }
 
-    fileUpload(file){
+    fileUpload(file) {
         const url = '/file';
         const formData = new FormData();
         formData.append('file',file)
@@ -42,8 +45,9 @@ export default class Sidebar extends Component {
                     <form onSubmit={this.submit}>
                     <div className="upload">
                         <input type="file" name="file" onChange={this.change} className="custom-file-input"></input>
-                        <button type="submit" className="custom-btn icon">
-                            <UploadIcon/>
+                        <button type="submit" className="custom-btn icon" title="Cilck to upload">
+                            {this.state.file && <UploadIcon fill={'#394166'}/>}
+                            {!this.state.file && <UploadIcon/>}
                         </button>
                         <div className="rect">
                         </div>    
